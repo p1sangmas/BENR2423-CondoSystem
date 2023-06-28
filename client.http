@@ -1,61 +1,80 @@
-POST http://localhost:3000/login
+POST http://localhost:3000/loginOwner
 Content-Type: application/json
 
 {
-    "name": "Fahmi",
+    "idNumber": "20223112",
     "password": "12345"
 }
 
 ###
-
-POST http://localhost:3000/viewVisitor
+POST http://localhost:3000/loginSecurity
 Content-Type: application/json
 
 {
-    "name": "Fahmi",
-    "password": "12345",
-    "role": "admin"
+    "idNumber": "20223113",
+    "password": "12345"
 }
 
 ###
-
-POST http://localhost:3000/registerVisitor
+POST http://localhost:3000/registerOwner
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE51bWJlciI6IjIwMjIzMTEzIiwicm9sZSI6InNlY3VyaXR5IiwiaWF0IjoxNjg3OTYwMzM4fQ.8H2SFoZ7wTS-a5diLydk2-TI3vH9Nvg5PkcTKgwc88Q
+
+{
+        "role": "owner",
+        "name": "Zik",
+        "idNumber": "20223114",
+        "email": "zik@gmail.com",
+        "password": "12345",
+        "phoneNumber": "0987254672"
+}
+###
+GET http://localhost:3000/viewVisitor
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE51bWJlciI6IjIwMjIzMTEzIiwicm9sZSI6InNlY3VyaXR5IiwiaWF0IjoxNjg3OTYwMzM4fQ.8H2SFoZ7wTS-a5diLydk2-TI3vH9Nvg5PkcTKgwc88Q
+
+###
+
+POST http://localhost:3000/checkinVisitor
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE51bWJlciI6IjIwMjIzMTEzIiwicm9sZSI6InNlY3VyaXR5IiwiaWF0IjoxNjg3OTYwMzM4fQ.8H2SFoZ7wTS-a5diLydk2-TI3vH9Nvg5PkcTKgwc88Q
 
 {
     "role": "visitor",
-    "name": "Wong Siew",
-    "idNumber": "444555666",
-    "documentType": "Passport",
+    "name": "Daus Hasan",
+    "idNumber": "111222333",
+    "documentType": "Mykad",
     "gender": "Male",
-    "birthDate": "2006-03-12",
-    "age": "29",
-    "documentExpiry": "2033-09-23", 
-    "company": "sambal",
-    "TelephoneNumber": "029572756",
-    "vehicleNumber": "jvj123",
-    "category": "Relatives",
-    "ethnicity": "Chinese",
+    "birthDate": "2000-03-09",
+    "age": "23",
+    "documentExpiry": "2035-09-23", 
+    "company": "belacan",
+    "TelephoneNumber": "0123456789",
+    "vehicleNumber": "wnw2389",
+    "category": "Guest",
+    "ethnicity": "Malay",
     "photoAttributes": "Photo attributes here",
-    "passNumber": "004"
+    "passNumber": "003"
 }
 
 ###
 
-POST  http://localhost:3000/changePhoneNumber
+POST http://localhost:3000/changePassNumber
 Content-Type: application/json
+Authorization: Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE51bWJlciI6IjIwMjIzMTEzIiwicm9sZSI6InNlY3VyaXR5IiwiaWF0IjoxNjg3OTYwMzM4fQ.8H2SFoZ7wTS-a5diLydk2-TI3vH9Nvg5PkcTKgwc88Q
 
 {
-    "savedidNumber": "20223112",
-    "newphoneNumber": "0169042665"
+    "savedidNumber": "111222333",
+    "newpassNumber": "010"
 }
+
 
 ###
 
-POST http://localhost:3000/deleteVisitor
+POST http://localhost:3000/checkoutVisitor
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZE51bWJlciI6IjIwMjIzMTEyIiwicm9sZSI6Im93bmVyIiwiaWF0IjoxNjg3OTY0MDc5fQ.LUlYGn2-txy59_fkXaRNDlM6nKOAf1NGyWPJX8FKqCk
 
 {
-    "name": "Arif Saiful",
+    "name": "Daus Hasan",
     "idNumber": "111222333"
 }
